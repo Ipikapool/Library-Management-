@@ -7,6 +7,11 @@ from schemas.students import student_entity, students_entity
 student = APIRouter()
 
 
+@student.route('/')
+def library_management():
+    return "Welcome"
+
+
 @student.post('/students', status_code=201)
 async def create_user(student: Student):
     student_data = student.dict(exclude_unset=True)
