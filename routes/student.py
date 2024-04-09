@@ -1,3 +1,5 @@
+from typing import Optional
+
 from bson import ObjectId
 from fastapi import APIRouter, HTTPException
 
@@ -30,7 +32,7 @@ async def create_user(student: Student):
 
 
 @student.get('/students')
-async def find_users_with_country_age(country: str | None = None, age: int | None = None):
+async def find_users_with_country_age(country: Optional[str] = None, age: Optional[int] = None):
     query = {}
     projection = {'_id': 0, 'name': 1, 'age': 1}
 
