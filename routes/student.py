@@ -8,7 +8,7 @@ student = APIRouter()
 
 
 @student.get('/')
-def library_management():
+async def library_management():
     return "Welcome"
 
 
