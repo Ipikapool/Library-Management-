@@ -7,7 +7,7 @@ from schemas.students import student_entity, students_entity
 student = APIRouter()
 
 
-@student.route('/')
+@student.get('/')
 def library_management():
     return "Welcome"
 
